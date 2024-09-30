@@ -1,0 +1,128 @@
+@import "mixins/banner";
+@include bsBanner("");
+
+// scss-docs-start import-stack
+// Configuration
+@import "functions";
+@import "variables";
+@import "variables-dark";
+@import "maps";
+@import "mixins";
+@import "utilities";
+
+// Layout & components
+@import "root";
+@import "reboot";
+@import "type";
+@import "images";
+@import "containers";
+@import "grid";
+@import "tables";
+@import "forms";
+@import "buttons";
+@import "transitions";
+@import "dropdown";
+@import "button-group";
+@import "nav";
+@import "navbar";
+@import "card";
+@import "accordion";
+@import "breadcrumb";
+@import "pagination";
+@import "badge";
+@import "alert";
+@import "progress";
+@import "list-group";
+@import "close";
+@import "toasts";
+@import "modal";
+@import "tooltip";
+@import "popover";
+@import "carousel";
+@import "spinners";
+@import "offcanvas";
+@import "placeholders";
+
+// Helpers
+@import "helpers";
+
+// Utilities
+@import "utilities/api";
+// scss-docs-end import-stack
+
+.bg-custom-height {
+  min-height: 780px;
+  padding: 2rem 0;
+}
+.bg-hero {
+  background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(0, 255, 255, 0.2) 100%
+    ),
+    url("/assets/img/bg-hero.jpg") !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 80% 80%;
+  background-attachment: fixed; // Inverser l'image horizontalement
+}
+
+//   position: absolute;
+.skewed {
+  right: 0px;
+}
+@media screen and (min-width: 426px) {
+  .skewed {
+    top: 0;
+    bottom: 0;
+    right: 70px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    //   height: 100%;
+    background: white;
+    transform: skewY(-3deg);
+    transform-origin: top left;
+    z-index: 20;
+  }
+}
+
+
+.sun-ray::before, .sun-ray::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(255, 223, 0, 0.5);
+    animation: ray 1.5s infinite;
+}
+
+.sun-ray::before {
+    transform: scale(1.2);
+}
+
+.sun-ray::after {
+    transform: scale(1.4);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes ray {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
